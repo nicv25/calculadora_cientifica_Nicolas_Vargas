@@ -17,32 +17,31 @@
 
         <div class="buttons">
             <!-- Fila 1 -->
-            <button onclick="append('1')">1</button>
-            <button onclick="append('2')">2</button>
-            <button onclick="append('3')">3</button>
-            <button class = "operator" onclick="append('+')">+</button>
+            <button id="numero" onclick="append('1')">1</button>
+            <button id="numero" onclick="append('2')">2</button>
+            <button id="numero" onclick="append('3')">3</button>
+            <button id="signo" class = "operator" onclick="append('+')">+</button>
 
             <!-- Fila 2 -->
-            <button onclick="append('4')">4</button>
-            <button onclick="append('5')">5</button>
-            <button onclick="append('6')">6</button>
-            <button class = "operator" onclick="append('-')">−</button>
+            <button id="numero" onclick="append('4')">4</button>
+            <button id="numero" onclick="append('5')">5</button>
+            <button id="numero" onclick="append('6')">6</button>
+            <button id="signo" class = "operator" onclick="append('-')">−</button>
 
             <!-- Fila 3 -->
-            <button onclick="append('7')">7</button>
-            <button onclick="append('8')">8</button>
-            <button onclick="append('9')">9</button>
-            <button class = "operator" onclick="append('*')">×</button>
+            <button id="numero" onclick="append('7')">7</button>
+            <button id="numero" onclick="append('8')">8</button>
+            <button id="numero" onclick="append('9')">9</button>
+            <button id="signo" class = "operator" onclick="append('*')">×</button>
 
             <!-- Fila 4 -->
-            <button onclick="append('.')">.</button>
-            <button onclick="append('0')">0</button>
-            <button class = "operator" onclick="clearLast()">C</button>
-            <button class = "operator" onclick="append('/')">÷</button>
+            <button id="decimal" onclick="append('.')">.</button>
+            <button id="numero" onclick="append('0')">0</button>
+            <button id="signo" class = "operator" onclick="append('/')">÷</button>
 
             <!-- Fila 5: BORRAR (2 cols) + = (2 cols) -->
-            <button class="warning" onclick="clearAll()">BORRAR</button>
-            <button class="equals"  onclick="calculate()">=</button>
+            <button id="limpiar" class="warning" onclick="clearAll()">BORRAR</button>
+            <button id="equal" class="equals"  onclick="calculate()">=</button> 
         </div>
 
     </div>
