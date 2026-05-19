@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
+    
     <title>Calculadora</title>
 
 </head>
@@ -17,34 +18,35 @@
 
         <div class="buttons">
             <!-- Fila 1 -->
-            <button id="numero" onclick="append('1')">1</button>
-            <button id="numero" onclick="append('2')">2</button>
-            <button id="numero" onclick="append('3')">3</button>
-            <button id="signo" class = "operator" onclick="append('+')">+</button>
+            <button class ="numero" >1</button>
+            <button class ="numero" >2</button>
+            <button class ="numero" >3</button>
+            <button class ="signo" >+</button>
 
             <!-- Fila 2 -->
-            <button id="numero" onclick="append('4')">4</button>
-            <button id="numero" onclick="append('5')">5</button>
-            <button id="numero" onclick="append('6')">6</button>
-            <button id="signo" class = "operator" onclick="append('-')">−</button>
+            <button class ="numero" >4</button>
+            <button class ="numero" >5</button>
+            <button class ="numero" >6</button>
+            <button class ="signo" >−</button>
 
             <!-- Fila 3 -->
-            <button id="numero" onclick="append('7')">7</button>
-            <button id="numero" onclick="append('8')">8</button>
-            <button id="numero" onclick="append('9')">9</button>
-            <button id="signo" class = "operator" onclick="append('*')">×</button>
+            <button class ="numero" >7</button>
+            <button class ="numero" >8</button>
+            <button class ="numero" >9</button>
+            <button class ="signo" >×</button>
 
             <!-- Fila 4 -->
-            <button id="decimal" onclick="append('.')">.</button>
-            <button id="numero" onclick="append('0')">0</button>
-            <button id="signo" class = "operator" onclick="append('/')">÷</button>
+            <button class ="decimal" >.</button>
+            <button class ="numero" >0</button>
+            <button class ="signo">÷</button>
 
             <!-- Fila 5: BORRAR (2 cols) + = (2 cols) -->
-            <button id="limpiar" class="warning" onclick="clearAll()">BORRAR</button>
-            <button id="equal" class="equals"  onclick="calculate()">=</button> 
+            <button class ="equal">=</button> 
+            <button class ="limpiar"  >BORRAR</button>
         </div>
 
     </div>
+    <script src="functional/functions.js"></script>
 
 </body>
 </html>
