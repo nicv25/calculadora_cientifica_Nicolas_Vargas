@@ -33,7 +33,7 @@ let m = {
         }
     },
 
-      leerTeclado: function (event) {
+    leerTeclado: function (event) {
         const tecla = event.key;
 
         if (!isNaN(tecla)) {
@@ -112,6 +112,38 @@ let m = {
     limpiarDisplay: function () {
         p.display.value = "";
         p.resultado = false;
+    },
+
+    operacionAvanzada: function (tipo) {
+        let valor = parseFloat(p.display.value);
+
+        if (isNaN(valor)) return;
+
+        try {
+            switch (tipo) {
+                case "√":
+                    p.display.value = Math.sqrt(valor);
+                    break;
+
+                case "x²":
+                    p.display.value = Math.pow(valor, 2);
+                    break;
+
+                case "sin":
+                    p.display.value = Math.sin(valor);
+                    break;
+
+                case "cos":
+                    p.display.value = Math.cos(valor);
+                    break;
+
+            }
+
+            p.resultado = true;
+        } catch (error) {
+            p.display.value = "Error";
+            p.resultado = true;
+        }
     },
 
 };
