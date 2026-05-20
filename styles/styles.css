@@ -2,11 +2,24 @@ body {
     width: 100%;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 25%, #16213e 50%, #0d3b2e 75%, #1a1a2e 100%);
     color: black;
     margin: 0;
+}
+
+.titulo h1{
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 01px;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 2px #4d4d4d ;
 }
 
 #calculator-body {
@@ -82,7 +95,7 @@ body {
 }
 
 .buttons button.warning {
-    grid-column: span 1;
+    grid-column: span 1 ;
 }
 
 .buttons button.warning:hover {
