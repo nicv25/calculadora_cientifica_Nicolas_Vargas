@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    
     <title>Calculadora</title>
-
 </head>
+
 <body>
 
     <div id="calculator-body">
-
         <div class="input">
             <input type="text" id="display" readonly placeholder="0">
         </div>
 
         <div class="buttons">
             <!-- Fila 1 -->
-            <button class ="numero" >1</button>
-            <button class ="numero" >2</button>
-            <button class ="numero" >3</button>
-            <button class ="signo" >+</button>
+            <button class="signo avanzado">√</button>
+            <button class="signo avanzado">x²</button>
+            <button class="signo avanzado">cos</button>
+            <button class="signo avanzado">sin</button>
 
             <!-- Fila 2 -->
-            <button class ="numero" >4</button>
-            <button class ="numero" >5</button>
-            <button class ="numero" >6</button>
-            <button class ="signo" >−</button>
+            <button class="numero">7</button>
+            <button class="numero">8</button>
+            <button class="numero">9</button>
+            <button class="signo">÷</button>
 
             <!-- Fila 3 -->
-            <button class ="numero" >7</button>
-            <button class ="numero" >8</button>
-            <button class ="numero" >9</button>
-            <button class ="signo" >×</button>
+            <button class="numero">4</button>
+            <button class="numero">5</button>
+            <button class="numero">6</button>
+            <button class="signo">×</button>
 
             <!-- Fila 4 -->
-            <button class ="decimal" >.</button>
-            <button class ="numero" >0</button>
-            <button class ="signo">÷</button>
+            <button class="numero">1</button>
+            <button class="numero">2</button>
+            <button class="numero">3</button>
+            <button class="signo">−</button>
 
-            <!-- Fila 5: BORRAR (2 cols) + = (2 cols) -->
-            <button class ="equal">=</button> 
-            <button class ="limpiar"  >BORRAR</button>
+            <!-- Fila 5 -->
+            <button class="decimal">.</button>
+            <button class="numero">0</button>
+            <button class="limpiar warning">BORRAR</button>
+            <button class="signo">+</button>
+
+            <!-- Fila 6 -->
+            <button class="equal equals">=</button>
         </div>
-
     </div>
-    <script src="functional/functions.js"></script>
 
+    <script src="functional/functions.js"></script>
 </body>
+
 </html>

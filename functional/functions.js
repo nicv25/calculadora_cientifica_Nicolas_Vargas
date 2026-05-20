@@ -1,67 +1,38 @@
 let p = {
     teclas: document.querySelectorAll("#calculator-body button"),
-    action: null,
-    digit: null,
-    operations: document.querySelector("#display"),
-    canti_signos: 0,
-    canti_decimal: false,
-    resultado: false
+    display: document.querySelector("#display"),
+    resultado: false,
+    decimalActivo: false
 };
 
 let m = {
     inicio: function () {
         for (let i = 0; i < p.teclas.length; i++) {
-            p.teclas[i].addEventListener("click", m.oprimir_tecla);
+            p.teclas[i].addEventListener("click", m.oprimirTecla);
         }
+
     },
 
-    oprimir_tecla: function (event) {
+    oprimirTecla: function (event) {
         const btn = event.currentTarget;
-        const clases = btn.getAttribute("class");
-        const texto = btn.textContent; 
+        const texto = btn.textContent.trim();
 
-        p.action = clases;   
-        p.digit = texto;     
-
-        m.calculadora(p.action);
+        if (btn.classList.contains("numero")) {
+            m.agregarNumero(texto);
+        } else if (btn.classList.contains("decimal")) {
+            m.agregarDecimal();
+        } else if (btn.classList.contains("signo") && !btn.classList.contains("avanzado")) {
+            m.agregarOperador(texto);
+        } else if (btn.classList.contains("equal")) {
+            m.calcularResultado();
+        } else if (btn.classList.contains("limpiar")) {
+            m.limpiarDisplay();
+        } else if (btn.classList.contains("avanzado")) {
+            m.operacionAvanzada(texto);
+        }
     },
 
-    calculadora: function (action) {
-        switch (action) {
-            case "numero":
-                p.operations.value += p.digit;
-                break;
-            case "signo":
-                p.operations.value += p.digit;
-                break;
-            case "decimal":
-                p.operations.value += p.digit;
-                break;
-            case "equal":
-                let expr = p.operations.value;
 
-                expr = expr.replace(/×/g, "*")
-                    .replace(/÷/g, "/")
-                    .replace(/−/g, "-");
-
-                try {
-                    const resultado = eval(expr); 
-
-                    p.operations.value = resultado;
-                    p.resultado = true;
-                } catch (e) {
-                    p.operations.value = "Error";
-                }
-                break;
-            case "limpiar":
-                p.operations.value = "";
-                p.resultado = false;
-                break;
-            default:
-                console.log("clase no reconocida:", action);
-                break;
-        }
-    }
 };
 
 document.addEventListener("DOMContentLoaded", m.inicio);

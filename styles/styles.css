@@ -1,114 +1,111 @@
- body {
-     width: 100%;
-     min-height: 100vh;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 25%, #16213e 50%, #0d3b2e 75%, #1a1a2e 100%);
-     color: black;
- }
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 25%, #16213e 50%, #0d3b2e 75%, #1a1a2e 100%);
+    color: black;
+    margin: 0;
+}
 
- #calculator-body {
-     position: relative;
-     width: 100%;
-     max-width: 420px;
-     border-radius: 20px;
-     background: #dde1e7;
-     padding: 40px 36px 48px;
- }
+#calculator-body {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px;
+    background: #dde1e7;
+    padding: 40px 36px 48px;
+    box-sizing: border-box;
+}
 
- .input input {
-     width: 90% !important;
-     margin: 0 auto;
-     height: 90px;
-     border-radius: 10px;
-     background: #dde1e7;
-     box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45),
-         inset 5px 5px 9px rgba(94, 104, 121, 0.3);
-     border: 0;
-     color: rgb(100, 100, 100);
-     font-size: 2.2rem;
-     text-align: right;
-     padding: 0 24px;
-     font-family: monospace;
-     outline: none
- }
+.input input {
+    width: 100%;
+    height: 90px;
+    border-radius: 10px;
+    background: #dde1e7;
+    box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45),
+                inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+    border: 0;
+    color: rgb(100, 100, 100);
+    font-size: 2.2rem;
+    text-align: right;
+    padding: 0 24px;
+    font-family: monospace;
+    outline: none;
+    box-sizing: border-box;
+}
 
- .input input:focus {
-     outline: none;
- }
+.input input:focus {
+    outline: none;
+}
 
- /* GRID de 4 columnas — corrección principal */
- .buttons {
-     padding-top: 28px;
-     display: grid;
-     grid-template-columns: repeat(4, 1fr);
-     gap: 14px;
- }
+.buttons {
+    padding-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+}
 
- .buttons button {
-     cursor: pointer;
-     height: 75px;
-     border: 0;
-     font-size: 1.6rem;
-     font-family: monospace;
-     border-radius: 50px;
-     background: #dde1e7;
-     /* color hex válido */
-     box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
-         5px 5px 9px rgba(94, 104, 121, 0.3);
-     color: rgb(120, 120, 120);
-     transition: box-shadow 120ms ease, background 120ms ease, color 120ms ease;
- }
+.buttons button {
+    cursor: pointer;
+    height: 75px;
+    border: 0;
+    font-size: 1.6rem;
+    font-family: monospace;
+    border-radius: 50px;
+    background: #dde1e7;
+    box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45),
+                5px 5px 9px rgba(94, 104, 121, 0.3);
+    color: rgb(120, 120, 120);
+    transition: box-shadow 120ms ease, background 120ms ease, color 120ms ease;
+}
 
- .buttons button:hover {
-     color: rgb(60, 60, 60);
- }
+.buttons button:hover {
+    color: rgb(60, 60, 60);
+}
 
- .buttons button:active {
-     background: #dde1e7;
-     box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45),
-         inset 5px 5px 9px rgba(94, 104, 121, 0.3);
- }
+.buttons button:active {
+    background: #dde1e7;
+    box-shadow: inset -5px -5px 9px rgba(255, 255, 255, 0.45),
+                inset 5px 5px 9px rgba(94, 104, 121, 0.3);
+}
 
- .buttons button.operator{
-    background: #16213e;
- }
+.buttons button.avanzado {
+    background-color: #16213e;
+    color: white;
+}
 
- .buttons button.operator:active{
-    box-shadow: inset -5px -5px 9px rgba(0, 46, 88, 0.45),
-    inset 5px 5px 9px rgba(94, 104, 121, 0.3);
- }
+.buttons button.avanzado:hover {
+    background-color: #1d2b52;
+    color: white;
+}
 
+.buttons button.warning {
+    grid-column: span 1;
+}
 
- /* BORRAR — ocupa 2 columnas */
- .buttons button.warning {
-     grid-column: span 2;
-     font-family: monospace;
- }
+.buttons button.warning:hover {
+    background: #ff00009a;
+    color: white;
+}
 
- .buttons button.warning:hover {
-     background: #ff00009a;
-     color: white;
- }
+.buttons button.warning:active {
+    background: #ff0000;
+    color: white;
+}
 
- .buttons button.warning:active {
-     background: #ff0000;
-     color: white;
- }
+.buttons button.equals {
+    grid-column: span 4;
+    color: rgb(80, 130, 200);
+}
 
- /* = — ocupa las otras 2 columnas */
- .buttons button.equals {
-     grid-column: span 2;
-     color: rgb(80, 130, 200);
- }
+.buttons button.equals:hover {
+    background: rgba(80, 130, 200, 0.55);
+    color: white;
+}
 
- .buttons button.equals:hover {
-     background: rgba(80, 130, 200, 0.55);
-     color: white;
- }
-
- .buttons button.equals:active {
-     background: rgb(80, 130, 200);
-     color: white;
- }
+.buttons button.equals:active {
+    background: rgb(80, 130, 200);
+    color: white;
+}
